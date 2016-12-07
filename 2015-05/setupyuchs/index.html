@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>老黑莓上的邮件神器——语盒</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="老黑莓上的邮件神器——语盒"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2015-05-28T15:34+0800"/>
+<meta name="author" content=""/>
+<meta name="description" content="侯爷的博客|记录和分享"/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="/css/worg.css" /> <link rel="shortcut icon" href="/images/favicon.ico"/>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-41177027-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:100%;white-space:nowrap;">
+ <a accesskey="H" href="http://houye.xyz"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">老黑莓上的邮件神器——语盒</h1>
+
+<p><a href="https://code.google.com/p/yuchberry/wiki/FAQ">语盒的介绍</a> 
+</p>
+<p>
+简单来说，语盒是未上服务的老系统黑莓上的邮件解决方案，它能提供类似黑莓官方邮件服务的体验。我曾付费过大半年，语盒需要有一台服务器跑邮件的服务端，以前使用的是语盒官方的服务器，现在手头有一台搬瓦工的vps，想自己动手试试。配置分两部分——服务端和客户端。  
+</p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">服务端</a></li>
+<li><a href="#sec-2">手机端</a></li>
+<li><a href="#sec-3">向语盒致敬</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">服务端</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>需要先给vps安装java运行环境，我当初试了好几个jre，都无法正常运行Svr.jar，官网的配置wiki是针对windows平台，我找啊找，终于找到独立主机配置的wiki（包括linux平台），原来它需要的是IBM JRE，废话不多说，命令如下  
+</p>
+
+
+
+<pre class="example">    yum install -y compat-libstdc++* libXp*
+wget http://dl.dropbox.com/u/182853/ibm-java-i386-jre-6.0-9.0.i386.rpm
+rpm -ivh ibm-java-i386-jre-6.0-9.0.i386.rpm
+rm -f ibm-java-i386-jre-6.0-9.0.i386.rpm
+</pre>
+
+
+<p>
+设置PATH
+</p>
+
+
+<pre class="example">`echo "export PATH=/opt/ibm/java-i386-60/jre/bin:\$PATH" &gt;&gt; /etc/profile `
+`source /etc/profile`  
+</pre>
+
+
+<p>
+查看是否安装成功  
+        `java -version`  
+</p>
+<p>
+将语盒服务端程序拷到vps上，共四个，分别为  
+</p>
+<ul>
+<li>config.xml
+</li>
+<li>signature.txt
+</li>
+<li>runSvr.sh
+</li>
+<li>svr.jar
+</li>
+</ul>
+
+
+<p>
+config.xml 是主要的配置文件。singnature.txt 是邮件的签名，可以在里面设置邮件的签名。runSvr.sh 是运行脚本，可自行修改。svr.jar 就是主要服务的jar包。  
+</p>
+<p>
+config.xml 配置可以参照<a href="http://code.google.com/p/yuchberry/wiki/fill_config_ini">语盒项目的wiki</a>，我不需要IM，所以把那些配置项全部删掉了。记住用户密码和端口号，在客户端上要用。邮箱imap和smtp查看具体邮箱服务商的帮助。  
+</p>
+<p>
+脚本内容如下，nohup可以让程序一直运行在后台，即使shell关闭和命令执行的用户退出，程序也一直运行。  
+`nohup java -jar svr.jar console`  
+</p>
+<p>
+运行命令，查看日志有无错误，常见错误日志在<a href="https://code.google.com/p/yuchberry/wiki/Connect_Error_info">这里</a>。
+</p>
+<p>
+查看端口是否开启  
+`netstat -apn | grep 端口号`  
+</p>
+<p>
+一切无误，服务端配置完成。  
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">手机端</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>手机上的service Book中要有CMIME条目，如果没有，下载一个<a href="http://code.google.com/p/yuchberry/downloads/list">含CMIME条目的SB</a>，恢复到手机上，具体方法百度。  
+</p>
+<p>
+下载对应的客户端，填上vps的ip，前面配置的端口和用户密码，连接。成功连接后，可以设置下开机自动启动，并隐藏后台运行图标。这样语盒就“几乎”嵌入在系统里了。  
+</p>
+<p>
+详细的使用说明在<a href="http://code.google.com/p/yuchberry/wiki/Use_introduction">这里</a>。  
+</p>
+<p>
+现在发一封邮件试试吧。  
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">向语盒致敬</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>语盒很好的解决了当时国内不上服务黑莓手机的邮件问题，程序的体验接近原生。在当时所有国人开发的黑莓程序中，我觉得语盒是其中翘楚。更重要的是作者开源了整个程序，并毫无保留的写了大量wiki。<a href="http://code.google.com/p/yuchberry/wiki/Why_Open_Source">作者对于开源</a>也颇有自己的见解。
+</p>
+<p>
+老系统的黑莓即将退出人们的视野。黑莓10系统上开放了，老系统上需要上服务才能使用的邮件功能，因此语盒的作用越来越小。今年年初，作者宣布停止语盒项目的开发工作，我想以后也不会启动了，语盒随着老黑莓的消失也将慢慢消失不见。托管语盒代码的google code 近期宣布关闭，原有项目全部移到了Github上。
+</p>
+<p>
+技术的进步，有时并不仅仅是改变生活，它会颠覆生活，它给了生活更多意想不到的可能，它使你一直往前，一直往前，无法停止，无法回头。
+</p>
+
+
+</br>
+</br>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'hypblog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+
+
+</div>
+</body>
+</html>

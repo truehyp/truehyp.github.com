@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>linux和我的故事</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="linux和我的故事"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2015-05-28T19:50+0800"/>
+<meta name="author" content=""/>
+<meta name="description" content="侯爷的博客|记录和分享"/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="/css/worg.css" /> <link rel="shortcut icon" href="/images/favicon.ico"/>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-41177027-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:100%;white-space:nowrap;">
+ <a accesskey="H" href="http://houye.xyz"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">linux和我的故事</h1>
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">缘起安卓</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>11年，我进了大学，有了第一款智能手机——中兴V880，也是我第一部安卓系统的手机。好奇心的驱使下，踏上了刷机的漫漫路，接下来的一年多，刷机重启尝试新软件就是V880常常的状态，一个个的ROM，插件，软件出现在我的手机上。第一次真正的泡论坛，天天等着大神们制作的新鲜rom的出炉，论坛由寥寥几个大神和其余的小白组成，所谓的交流只是随意打上几个字母来获得下载链接。那时，对刷机是狂热的，奢望着手机有更好的表现，后来才发现那是多么徒劳，不过那是后来。
+</p>
+<p>
+当时知道安卓是开源的，基于同样开源的linux而开发，还是因为好奇心，去了解了linux，认识了linus，斯托曼等等，“linux分明是场革命呀”，当时我这么感叹道。回到安卓，找软件时发现google play常常连不上，百度后知道了墙的存在（你看，我搜索都是用百度的）。
+</p>
+<p>
+国内大型的安卓软件市场不少，软件质量却不高，广告，弹窗，扣费等很常见，装过一定数量的的软件后，我很失望。乱七八糟的全卸载了，系统换回原始的港版2.2（因为它可以刷上完整的google服务框架），第一个google帐号还是在V880上申请的。一年后，V880渐渐跟不上时代了，微信，天天动听越来越庞大，手机越来越频繁的卡顿。上个礼拜在115网盘上找到了小米笔记的备份，写了不少东西，从前的时光忽然就短暂的回来了，那个港版的刷机包也在网盘上，虽然不会用到它了，但终究舍不得删。现在V880是室友在用，插上了他的联通卡，用来发Wifi。
+</p>
+<p>
+关于V880，就这么多，说不上喜欢，它是生活的一部分，
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">踏入linux的世界</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>ubuntu是我第一个尝试的linux系统，第一次刻了光盘，当时还住在1号楼，尽管看了些教程，但真正安装时仍然出了问题——把整个硬盘格了，且安装没完成。那个下午，急急忙忙跑去数码店买了windows光盘（只见过，没试过U盘装系统），第一次尝试以失败告终。
+</p>
+<p>
+继续网上搜，没过多久，又开始了ubuntu的安装。装好后，很茫然，鼠标右击没有刷新，没有开始菜单，没有熟悉的软件，甚至因为没有对应的闪讯拨号软件而无法上网。很长一段时间在ubuntu下我都依靠同学的发的wifi，那段时间熟悉了一些ubuntu上的一些软件，vim，gimp，okular，latex……
+</p>
+<p>
+ubuntu自带的BUG令人很不爽，自带的软件常崩溃，电脑发热严重（安装显卡驱动后，好了些）。
+</p>
+<p>
+ubuntu给我的印象不太好，试试debian吧，一直用到了现在。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">自由自在</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>慢慢适应，习惯和喜欢上了debian。打开windows一般只是看直播或者用迅雷下载东西，另外不知道可以干点什么。开了debian，打开shell，启动emacs打打字，把moc丢后台放音乐，用vim敲点小程序……没有国产的一些主流软件，固然会有些不方便，但同时这也可以节省你不少时间，不会无所事事的浪费时间。
+</p>
+<p>
+有人觉得我放弃了娱乐，手机电脑上都不装游戏，其实只是我们的娱乐方式不一样。
+</p>
+
+
+
+</br>
+</br>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'hypblog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+
+
+</div>
+</body>
+</html>

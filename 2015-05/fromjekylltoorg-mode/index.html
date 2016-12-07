@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="gbk"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>抛弃Jekyll和Markdown 拥抱Org-mode</title>
+<meta http-equiv="Content-Type" content="text/html;charset=gbk"/>
+<meta name="title" content="抛弃Jekyll和Markdown 拥抱Org-mode"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2015-05-30T08:35+0800"/>
+<meta name="author" content=""/>
+<meta name="description" content="侯爷的博客|记录和分享"/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="/css/worg.css" /> <link rel="shortcut icon" href="/images/favicon.ico"/>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-41177027-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:100%;white-space:nowrap;">
+ <a accesskey="H" href="http://houye.xyz"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">抛弃Jekyll和Markdown 拥抱Org-mode</h1>
+
+<p>偶然翻以前的笔记，看到用 Emacs 的 Org-mode 生成的 HTML，网上一搜，果真有人用它来生成博客页面。于是我开始思考用 Org-mode 能不能取代掉 Jekyll 呢（我仅把 Jekyll 当作 HTML 生成器）？
+</p>
+<p>
+记得13年的时候，我即用 Org-mode 记笔记，也用支持 Markdown 语法的 Jekyll 来生成博客文章，常会弄混两者的语法，一番纠结后，选择了 Markdown 语法来记笔记写博客，因为 Markdown 语法简单而且 Jekyll 不支持
+ Org-mode 的语法。
+</p>
+<p>
+这周重新看了 Org-mode 的教程和以前自己的笔记，发觉 Org-mode 复杂语法下的功能让人惊叹，它能方便的插标题、插图、做表、嵌入代码、缩进、居中、引用…… Markdown 简单不够严谨的语法对于复杂文章的排版一定比不上
+ Org-mode ，同时 Org—mode 能方便的导出成各种格式，我使用的当然是导出 html 格式。语法看得差不多后，我计划了整个迁移的步骤。
+</p><ol>
+<li>制作模板
+</li>
+<li>更新所有页面
+</li>
+<li>实现评论、订阅和google统计
+</li>
+</ol>
+
+
+<p>
+我不会写 CSS ，但会改 CSS ，在网上找到一个<a href="http://dayigu.github.io/WhyUseOrgModeToWriteBlog.html">合眼的 CSS </a>，稍做修改后，它所展现的就是你所看到的样子。 Org-mode 可以工程批量生成 html ，碍于我先前所有的文章都以 Mardkdown 语法排版，逃不掉一个个修改生成看结果是否满意。这一周大部分的闲余时间都花在调格式里，其中有不少细节问题，
+比如 Org-mode 默认生成的 postamble ，右上角连体的 UP | HOME ，下划线被转义等等，索性都一 一解决了。
+</p>
+<p>
+首页，文章页和友情链接页都完工了。所有的 wiki 页面还没做处理，由于没了 Jekyll ， RSS 文件中的变量失效造成RSS不可用，初步打算是写个脚本一劳永逸。这次修改是最费心费力的一次，也是最明确我要什么的一次。
+用 Org-mode 的成本比 Markdown 高不少， Markdown 是种轻量标记语言，学习上手快，适合结构不复杂的文本排版。感觉 Org-mode 依托强大的“操作系统”—— Emacs ，几乎可以无所不为了。
+</p>
+<p>
+从 Github Page 上的 Jekyll + Markdown 到 Vps 上的自己搭建 Web 服务器和 Jekyll 环境，再到现在只依靠单纯的一页页 HTML 页面和一个 Web 服务器组成这个博客，想想自己真是够折腾的，选的尽是 Hard 模式。
+</p>
+
+
+</br>
+</br>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'hypblog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+<div id="postamble">
+
+
+</div>
+</body>
+</html>
