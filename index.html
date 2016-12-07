@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>侯爷的博客</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="description" content="侯爷的博客|记录和分享"
+ />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 100%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/worg.css" /> <link rel="shortcut icon" href="/images/favicon.ico"/>
+<link href="http://houye.xyz/atom.xml" rel="alternate" title="侯爷的博客" type="application/atom+xml" />
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-41177027-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">侯爷的博客</h1>
+<p>
+<a href="http://houye.xyz/links.html">Links</a> | <a href="http://houye.xyz/about.html">About</a> | <a href="http://houye.xyz/atom.xml">RSS</a> | <a href="http://houye.xyz/read.html">Read</a> 
+</p>
+
+<hr  />
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">2016-11</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>(16) <a href="http://houye.xyz/2016-11/chage">Linux用户密码过期</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">2016-10</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>(22) <a href="https://houye.xyz/2016-10/somethoughts">一些念头又涌了上来</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">2016-09</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>(03) <a href="http://houye.xyz/2016-09/shellcommand">用shell命令处理数据</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">2016-08</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>(29) <a href="http://houye.xyz/2016-08/t60">入手了一台ThinkPad T60</a>
+</li>
+<li>(29) <a href="http://houye.xyz/2016-08/sharess">分享一个免费shadowsocks帐号</a>
+</li>
+<li>(27) <a href="http://houye.xyz/2016-08/usedisqus">依然使用Disqus</a>
+</li>
+<li>(16) <a href="http://houye.xyz/2016-08/somemusic">几首歌</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">2016-04</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>(17) <a href="http://houye.xyz/2016-04/zhuyou/">我是猪油控</a>
+</li>
+<li>(12) <a href="http://houye.xyz/2016-04/huantaihu/">环太湖</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">2016-02</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>(26) <a href="http://houye.xyz/2016-02/juancun/">眷村是什么村</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7">2016-01</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>(03) <a href="http://houye.xyz/2016-01/cyclingin2016newyear/">快乐元旦</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8">2015-11</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>(09) <a href="http://houye.xyz/2015-11/orgmode">Org-Mode 果真神器</a>
+</li>
+<li>(07) <a href="http://houye.xyz/2015-11/aftermarathon/">马拉松后</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9">2015-09</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>(24)<a href="http://houye.xyz/2015-09/">距离</a> 
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10">2015-07</h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li>(14)<a href="http://houye.xyz/2015-07/continuerunning/">继续奔跑</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11">2015-05</h2>
+<div class="outline-text-2" id="text-11">
+<ul class="org-ul">
+<li>(30)<a href="http://houye.xyz/2015-05/fromjekylltoorg-mode/">抛弃Jekyll和Markdown 拥抱org-mode</a>
+</li>
+<li>(17)<a href="http://houye.xyz/2015-05/setupyuchs/">老黑莓上的邮件神器——语盒</a>
+</li>
+<li>(16)<a href="http://houye.xyz/2015-05/bb9700/">入了个黑莓9700</a>
+</li>
+<li>(10)<a href="http://houye.xyz/2015-05/blogcopy/">博客被采集了</a>
+</li>
+<li>(05)<a href="http://houye.xyz/2015-05/jekylltovps/">Github page Jekyll静态博客迁移到vps</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12">2015-04</h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li>(28)<a href="http://houye.xyz/2015-04/blogevents/">博客大事记</a>
+</li>
+<li>(26)<a href="http://houye.xyz/2015-04/darenwu/">大人物</a>
+</li>
+<li>(22)<a href="http://houye.xyz/2015-04/aboutlfs/">折腾LFS的一点笔记</a>
+</li>
+<li>(21)<a href="http://houye.xyz/2015-04/booklist/">列个待读书单</a>
+</li>
+<li>(21)<a href="http://houye.xyz/2015-04/SRVE0255E/">WAS出现 srve0255e 错误的解决</a>
+</li>
+<li>(04)<a href="http://houye.xyz/2015-04/poker2/">入手poker2机械键盘</a>
+</li>
+<li>(03)<a href="http://houye.xyz/2015-04/shellcommand/">经常用到的linux shell命令</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13">2015-03</h2>
+<div class="outline-text-2" id="text-13">
+<ul class="org-ul">
+<li>(25)<a href="http://houye.xyz/2015-03/hwgudao/">杭徽古道</a>
+</li>
+<li>(06)<a href="http://houye.xyz/2015-03/hongcun/">宏村行</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14">2015-02</h2>
+<div class="outline-text-2" id="text-14">
+<ul class="org-ul">
+<li>(11)<a href="http://houye.xyz/2015-02/aboutblog/">对博客的一些感受</a>
+</li>
+<li>(09)<a href="http://houye.xyz/2015-02/gtkresource/">Gtk+2.0 Gtk+3.0文档，手册，资源分享</a>
+</li>
+<li>(05)<a href="http://houye.xyz/2015-02/aboutthewatch/">手表 你去哪里了</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-15" class="outline-2">
+<h2 id="sec-15">2015-01</h2>
+<div class="outline-text-2" id="text-15">
+<ul class="org-ul">
+<li>(27)<a href="http://houye.xyz/2015-01/sisiphus/">我想和西西弗斯谈谈</a>
+</li>
+<li>(22)<a href="http://houye.xyz/2015-01/doyouremmberdropbox/">还记得墙外的Dropbox么？</a>
+</li>
+<li>(12)<a href="http://houye.xyz/2015-01/discoverlinux/">探索Linux操作系统</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-16" class="outline-2">
+<h2 id="sec-16">2014-12</h2>
+<div class="outline-text-2" id="text-16">
+<ul class="org-ul">
+<li>(31)<a href="http://houye.xyz/2014-12/summaryof2014/">写在2014边上</a>
+</li>
+<li>(21)<a href="http://houye.xyz/2014-12/cairoongtk32/">Gtk上的cairo(二)——画线小程序</a>
+</li>
+<li>(20)<a href="http://houye.xyz/2014-12/duzhe/">记《读者·原创版》</a>
+</li>
+<li>(06)<a href="http://houye.xyz/2014-12/shengming/">那你说生命的意义是什么</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-17" class="outline-2">
+<h2 id="sec-17">2014-11</h2>
+<div class="outline-text-2" id="text-17">
+<ul class="org-ul">
+<li>(21)<a href="http://houye.xyz/2014-11/blogwithjekyll/">Jekyll笔记</a>
+</li>
+<li>(14)<a href="http://houye.xyz/2014-11/reuseblackberry9000/">又拿起黑莓9000</a>
+</li>
+<li>(14)<a href="http://houye.xyz/2014-11/lizhi/">写在李志的《1701》发布</a>
+</li>
+<li>(12)<a href="http://houye.xyz/2014-11/lacklibEGL.la/">slackware缺少libEGL.la的解决</a>
+</li>
+<li>(02)<a href="http://houye.xyz/2014-11/14hangzhoumarathon/">14杭州国际马拉松之旅</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-18" class="outline-2">
+<h2 id="sec-18">2014-10</h2>
+<div class="outline-text-2" id="text-18">
+<ul class="org-ul">
+<li>(23)<a href="http://houye.xyz/2014-10/cairoongtk3/">Gtk上的cairo(一)——draw_area的简单应用</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-19" class="outline-2">
+<h2 id="sec-19">2014-09</h2>
+<div class="outline-text-2" id="text-19">
+<ul class="org-ul">
+<li>(30)<a href="http://houye.xyz/2014-09/thismonth/">兼职的日子</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-20" class="outline-2">
+<h2 id="sec-20">2014-08</h2>
+<div class="outline-text-2" id="text-20">
+<ul class="org-ul">
+<li>(19)<a href="http://houye.xyz/2014-08/aboutBitcoin/">关于比特币的几个概念</a>
+</li>
+<li>(17)<a href="http://houye.xyz/2014-08/changesOfmyblog/">博客最近的改动</a>
+</li>
+<li>(15)<a href="http://houye.xyz/2014-08/bb10DevelopEnvironment/">debian上搭建bb10开发环境（报错）</a>
+</li>
+<li>(13)<a href="http://houye.xyz/2014-08/zishuzhou/">一碗紫薯粥</a>
+</li>
+<li>(06)<a href="http://houye.xyz/2014-08/howtobeahacker/">《大教堂与集市》摘录</a>
+</li>
+<li>(02)<a href="http://houye.xyz/2014-08/blackberryq10/">黑莓Q10</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-21" class="outline-2">
+<h2 id="sec-21">2014-07</h2>
+<div class="outline-text-2" id="text-21">
+<ul class="org-ul">
+<li>(11)<a href="http://houye.xyz/2014-07/useSSH/">利用ssh翻墙和同步dropbox</a>
+</li>
+<li>(07)<a href="http://houye.xyz/2014-07/chooseoneblackberry/">9780和Q10</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-22" class="outline-2">
+<h2 id="sec-22">2014-06</h2>
+<div class="outline-text-2" id="text-22">
+<ul class="org-ul">
+<li>(26)<a href="http://houye.xyz/2014-06/jigsawpuzzle/">实习中期成果——拼图小游戏</a>
+</li>
+<li>(15)<a href="http://houye.xyz/2014-06/i3wmsetup/">推荐一个窗口管理器——i3</a>
+</li>
+<li>(14)<a href="http://houye.xyz/2014-06/lastsummer/">最后一个暑假</a>
+</li>
+<li>(10)<a href="http://houye.xyz/2014-06/pathos/">悲怆</a>
+</li>
+<li>(08)<a href="http://houye.xyz/2014-06/readruanyifeng/">一个寻找作者的读者</a>
+</li>
+<li>(05)<a href="http://houye.xyz/2014-06/thestoryoflinuxandi/">linux和我的故事</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-23" class="outline-2">
+<h2 id="sec-23">2014-05</h2>
+<div class="outline-text-2" id="text-23">
+<ul class="org-ul">
+<li>(11)<a href="http://houye.xyz/2014-05/minted/">minted——实现latex的代码高亮</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-24" class="outline-2">
+<h2 id="sec-24">2014-03</h2>
+<div class="outline-text-2" id="text-24">
+<ul class="org-ul">
+<li>(28)<a href="http://houye.xyz/2014-03/haiziba/">海子吧14年纪念活动总结</a>
+</li>
+<li>(26)<a href="http://houye.xyz/2014-03/haizi/">三月二十六 想起海子</a>
+</li>
+<li>(16)<a href="http://houye.xyz/2014-03/wangshi/">wang事</a>
+</li>
+<li>(07)<a href="http://houye.xyz/2014-03/blackberryautotext/">编辑黑莓的autotext</a>
+</li>
+<li>(01)<a href="http://houye.xyz/2014-03/BlogAndRss/">博客和RSS</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-25" class="outline-2">
+<h2 id="sec-25">2014-02</h2>
+<div class="outline-text-2" id="text-25">
+<ul class="org-ul">
+<li>(28)<a href="http://houye.xyz/2014-02/TheCourses/">这学期的课</a>
+</li>
+<li>(17)<a href="http://houye.xyz/2014-02/mynvidia/">Oh Nvidia</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-26" class="outline-2">
+<h2 id="sec-26">2013-12</h2>
+<div class="outline-text-2" id="text-26">
+<ul class="org-ul">
+<li>(31)<a href="http://houye.xyz/2013-12/summaryof2013/">写在2013边上</a>
+</li>
+<li>(18)<a href="http://houye.xyz/2013-12/liveinemacs/">我在用emacs</a>
+</li>
+<li>(10)<a href="http://houye.xyz/2013-12/installgentoo/">折腾gentoo</a>
+</li>
+<li>(01)<a href="http://houye.xyz/2013-12/install_gollum/">安装gollum</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-27" class="outline-2">
+<h2 id="sec-27">2013-10</h2>
+<div class="outline-text-2" id="text-27">
+<ul class="org-ul">
+<li>(02)<a href="http://houye.xyz/2013-10/timegoby/">10月很乱</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-28" class="outline-2">
+<h2 id="sec-28">2013-08</h2>
+<div class="outline-text-2" id="text-28">
+<ul class="org-ul">
+<li>(16)<a href="http://houye.xyz/2013-08/emacs_note/">Emacs笔记</a>
+</li>
+<li>(04)<a href="http://houye.xyz/2013-08/reinstall-the-system/">重装debian</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-29" class="outline-2">
+<h2 id="sec-29">2013-05</h2>
+<div class="outline-text-2" id="text-29">
+<ul class="org-ul">
+<li>(27)<a href="http://houye.xyz/2013-05/thisyear/">今年我大三</a>
+</li>
+<li>(11)<a href="http://houye.xyz/2013-05/vim-note/">vim 技巧</a>
+</li>
+<li>(07)<a href="http://houye.xyz/2013-05/muxin/">木心的诗</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-30" class="outline-2">
+<h2 id="sec-30">2013-04</h2>
+<div class="outline-text-2" id="text-30">
+<ul class="org-ul">
+<li>(21)<a href="http://houye.xyz/2013-04/github-blog/">我的github blog的故事</a>
+</li>
+<li>(01)<a href="http://houye.xyz/2013-04/hello-world/">测试</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>
