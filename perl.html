@@ -1,0 +1,1221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>《Perl语言入门》摘录</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="description" content="侯爷的Wiki|记录和分享"
+ />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 100%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/worg.css" /> <link rel="shortcut icon" href="/images/favicon.ico"/>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-41177027-4', 'auto');
+ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="js/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="H" href="http://wiki.houye.xyz"> HOME </a>
+</div><div id="content">
+<h1 class="title">《Perl语言入门》摘录</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">标量</a>
+<ul>
+<li>
+<ul>
+<li><a href="#sec-1-0-1">数字</a></li>
+<li><a href="#sec-1-0-2">字符串</a></li>
+<li><a href="#sec-1-0-3">操作符</a></li>
+<li><a href="#sec-1-0-4">标量变量</a></li>
+<li><a href="#sec-1-0-5">比较操作符</a></li>
+<li><a href="#sec-1-0-6">if判断语句</a></li>
+<li><a href="#sec-1-0-7">布尔值</a></li>
+<li><a href="#sec-1-0-8">去掉字符串末尾的换行符</a></li>
+<li><a href="#sec-1-0-9">while 控制语句</a></li>
+<li><a href="#sec-1-0-10">undef 值</a></li>
+<li><a href="#sec-1-0-11">判断是否为undef 值</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-2">列表和数组</a>
+<ul>
+<li>
+<ul>
+<li><a href="#sec-2-0-1">数组索引值</a></li>
+<li><a href="#sec-2-0-2">列表直接量</a></li>
+<li><a href="#sec-2-0-3">qw简写</a></li>
+<li><a href="#sec-2-0-4">引用整个数组</a></li>
+<li><a href="#sec-2-0-5">pop 和push 操作符</a></li>
+<li><a href="#sec-2-0-6">shift 和unshift 操作符</a></li>
+<li><a href="#sec-2-0-7">splice 操作符</a></li>
+<li><a href="#sec-2-0-8">字符串中数组内插</a></li>
+<li><a href="#sec-2-0-9">foreach 控制结构</a></li>
+<li><a href="#sec-2-0-10">reverse 操作符</a></li>
+<li><a href="#sec-2-0-11">sort 操作符</a></li>
+<li><a href="#sec-2-0-12">each 操作符</a></li>
+<li><a href="#sec-2-0-13">标量上下文和列表上下文</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-3">子程序</a>
+<ul>
+<li>
+<ul>
+<li><a href="#sec-3-0-1">定义</a></li>
+<li><a href="#sec-3-0-2">调用</a></li>
+<li><a href="#sec-3-0-3">默认数组变量</a></li>
+<li><a href="#sec-3-0-4">my 操作符</a></li>
+<li><a href="#sec-3-0-5">一个例子</a></li>
+<li><a href="#sec-3-0-6">use strict 编译命令</a></li>
+<li><a href="#sec-3-0-7">return 操作符</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-4">输入输出</a>
+<ul>
+<li>
+<ul>
+<li><a href="#sec-4-0-1">文件操作</a></li>
+<li><a href="#sec-4-0-2">二进制</a></li>
+<li><a href="#sec-4-0-3">关闭文件句柄</a></li>
+<li><a href="#sec-4-0-4">处理致命错误</a></li>
+<li><a href="#sec-4-0-5">自动检测致命错误</a></li>
+<li><a href="#sec-4-0-6">改变默认的文件输出句柄</a></li>
+<li><a href="#sec-4-0-7">输出内容会送到该文件句柄</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-5">哈希</a>
+<ul>
+<li>
+<ul>
+<li><a href="#sec-5-0-1">访问哈希元素</a></li>
+<li><a href="#sec-5-0-2">访问整个哈希</a></li>
+<li><a href="#sec-5-0-3">胖箭头</a></li>
+<li><a href="#sec-5-0-4">keys 和values 函数</a></li>
+<li><a href="#sec-5-0-5">each 函数</a></li>
+<li><a href="#sec-5-0-6">exists 函数</a></li>
+<li><a href="#sec-5-0-7">delete 函数</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-6">正则表达式</a>
+<ul>
+<li>
+<ul>
+<li><a href="#sec-6-0-1">匹配Unicode属性</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-7">用正则表达式进行匹配</a>
+<ul>
+<li>
+<ul>
+<li><a href="#sec-7-0-1">模式匹配修饰符</a></li>
+<li><a href="#sec-7-0-2">锚点</a></li>
+<li><a href="#sec-7-0-3">匹配多行文本</a></li>
+<li><a href="#sec-7-0-4">单词锚点</a></li>
+<li><a href="#sec-7-0-5">=~绑定操作符</a></li>
+<li><a href="#sec-7-0-6">捕获变量</a></li>
+<li><a href="#sec-7-0-7">不捕获模式</a></li>
+<li><a href="#sec-7-0-8">命名捕获</a></li>
+<li><a href="#sec-7-0-9">花括号</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-8">用正则表达式处理文本</a>
+<ul>
+<li>
+<ul>
+<li><a href="#sec-8-0-1">无损替换</a></li>
+<li><a href="#sec-8-0-2">大小写转换</a></li>
+<li><a href="#sec-8-0-3">split 操作符</a></li>
+<li><a href="#sec-8-0-4">join 函数</a></li>
+<li><a href="#sec-8-0-5">非贪婪模式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-9">其他控制结构</a>
+<ul>
+<li>
+<ul>
+<li><a href="#sec-9-0-1">unless 控制结构</a></li>
+<li><a href="#sec-9-0-2">until 控制结构</a></li>
+<li><a href="#sec-9-0-3">裸块</a></li>
+<li><a href="#sec-9-0-4">elsif 子句</a></li>
+<li><a href="#sec-9-0-5">for 控制结构</a></li>
+<li><a href="#sec-9-0-6">for 其实和foreach 是等价的</a></li>
+<li><a href="#sec-9-0-7">last 操作符</a></li>
+<li><a href="#sec-9-0-8">next 操作符</a></li>
+<li><a href="#sec-9-0-9">redo 操作符</a></li>
+<li><a href="#sec-9-0-10">带标签的块</a></li>
+<li><a href="#sec-9-0-11">条件操作符</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">标量</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+标量(scalar)：单个事物，例如数字，字符串
+</p>
+</div>
+<div id="outline-container-sec-1-0-1" class="outline-4">
+<h4 id="sec-1-0-1">数字</h4>
+<div class="outline-text-4" id="text-1-0-1">
+<ul class="org-ul">
+<li>数字在内部都以双精度浮点数储存
+</li>
+<li>直接量(literal)，直接写在源码中的数据
+</li>
+<li>操作符，%取模，**乘幂
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-0-2" class="outline-4">
+<h4 id="sec-1-0-2">字符串</h4>
+<div class="outline-text-4" id="text-1-0-2">
+<ul class="org-ul">
+<li>use utf8; 将源代码以utf8处理
+</li>
+<li>单引号字符串，反斜线转义只用于\\和\'
+</li>
+<li>双引号字符串，反斜线转义功能同C语言，\n,\t等
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-0-3" class="outline-4">
+<h4 id="sec-1-0-3">操作符</h4>
+<div class="outline-text-4" id="text-1-0-3">
+<ul class="org-ul">
+<li>连接操作符，.（句点)
+</li>
+<li>字符串重复操作符，x（小写的x）
+</li>
+</ul>
+
+<p>
+perl会完成字符串和数字的转换工作，你采用的是什么操作符，perl就会对操作数对相应的转换
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-0-4" class="outline-4">
+<h4 id="sec-1-0-4">标量变量</h4>
+<div class="outline-text-4" id="text-1-0-4">
+<ul class="org-ul">
+<li>储存单个标量值的变量，如$name，$是取单个东西/取标量的意思
+</li>
+<li>操作符 = += *= .=(字符串连接符号)
+</li>
+<li>输出 print 
+</li>
+<li>字符串中的标量变量内插 ，要在双引号里，print "a is $a";如果$a未初始化，则用空字符串替代。
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-0-5" class="outline-4">
+<h4 id="sec-1-0-5">比较操作符</h4>
+<div class="outline-text-4" id="text-1-0-5">
+<ul class="org-ul">
+<li>字符串：数字
+</li>
+<li>==:eq
+</li>
+<li>!=:ne
+</li>
+<li>&lt;:lt
+</li>
+<li>&gt;:gt
+</li>
+<li>&lt;=:le
+</li>
+<li>&gt;=:ge
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-0-6" class="outline-4">
+<h4 id="sec-1-0-6">if判断语句</h4>
+<div class="outline-text-4" id="text-1-0-6">
+<ul class="org-ul">
+<li>if(){} 一定要加花括号
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-0-7" class="outline-4">
+<h4 id="sec-1-0-7">布尔值</h4>
+<div class="outline-text-4" id="text-1-0-7">
+<ul class="org-ul">
+<li>数字：o为假，其余为真
+</li>
+<li>字符串：空字符串为假（字符串'0'也为假），其余为真
+</li>
+<li>不是数字和字符串：转换成数字或字符串再判断
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-0-8" class="outline-4">
+<h4 id="sec-1-0-8">去掉字符串末尾的换行符</h4>
+<div class="outline-text-4" id="text-1-0-8">
+<ul class="org-ul">
+<li>chomp()
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-0-9" class="outline-4">
+<h4 id="sec-1-0-9">while 控制语句</h4>
+<div class="outline-text-4" id="text-1-0-9">
+<ul class="org-ul">
+<li>while(){} 一定要加花括号      
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-0-10" class="outline-4">
+<h4 id="sec-1-0-10">undef 值</h4>
+<div class="outline-text-4" id="text-1-0-10">
+<ul class="org-ul">
+<li>未赋值的标量变量，为数字时是0，为字符串时是空字符串
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-0-11" class="outline-4">
+<h4 id="sec-1-0-11">判断是否为undef 值</h4>
+<div class="outline-text-4" id="text-1-0-11">
+<ul class="org-ul">
+<li>defined()
+</li>
+<li>创建undef 值 $aaa = undef
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">列表和数组</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+列表和数组代表复数。列表指标量的有序集合，数组指储存列表的变量
+</p>
+</div>
+<div id="outline-container-sec-2-0-1" class="outline-4">
+<h4 id="sec-2-0-1">数组索引值</h4>
+<div class="outline-text-4" id="text-2-0-1">
+<ul class="org-ul">
+<li>$#name 为最后一个元素的索引值。有个更简单的记法,-1表示数组最后一个元素的索引值
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-0-2" class="outline-4">
+<h4 id="sec-2-0-2">列表直接量</h4>
+<div class="outline-text-4" id="text-2-0-2">
+<ul class="org-ul">
+<li>(1, 2, 3)
+</li>
+<li>(1..100)
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-0-3" class="outline-4">
+<h4 id="sec-2-0-3">qw简写</h4>
+<div class="outline-text-4" id="text-2-0-3">
+<ul class="org-ul">
+<li>quoted word/quoted by whitespace 以空白符分割，加上引号，组成单词列表
+</li>
+<li>qw(a b c d)
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-0-4" class="outline-4">
+<h4 id="sec-2-0-4">引用整个数组</h4>
+<div class="outline-text-4" id="text-2-0-4">
+<ul class="org-ul">
+<li>@name
+</li>
+<li>@rocks = qw(bedrock slate lava)
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-0-5" class="outline-4">
+<h4 id="sec-2-0-5">pop 和push 操作符</h4>
+<div class="outline-text-4" id="text-2-0-5">
+<ul class="org-ul">
+<li>pop(@name)
+</li>
+<li>push(@name)
+</li>
+<li>数组为空，返回undef
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-0-6" class="outline-4">
+<h4 id="sec-2-0-6">shift 和unshift 操作符</h4>
+<div class="outline-text-4" id="text-2-0-6">
+<ul class="org-ul">
+<li>与pop push类似，但操作的是数组开头     
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-0-7" class="outline-4">
+<h4 id="sec-2-0-7">splice 操作符</h4>
+<div class="outline-text-4" id="text-2-0-7">
+<ul class="org-ul">
+<li>splice @array, 1, 2, qw(www) 删除array 下标1开始的2个元素，并用"www"替换。后2个参数可选。
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-0-8" class="outline-4">
+<h4 id="sec-2-0-8">字符串中数组内插</h4>
+<div class="outline-text-4" id="text-2-0-8">
+<ul class="org-ul">
+<li>print "a is @rocks" 
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-0-9" class="outline-4">
+<h4 id="sec-2-0-9">foreach 控制结构</h4>
+<div class="outline-text-4" id="text-2-0-9">
+<ul class="org-ul">
+<li>foreach $var (qw( a b c)){} var 取值，遍历列表，进行迭代
+</li>
+<li>默认变量 $_
+</li>
+<li>foreach (1..8){} 忽略控制变量，默认以$_为控制变量
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-0-10" class="outline-4">
+<h4 id="sec-2-0-10">reverse 操作符</h4>
+<div class="outline-text-4" id="text-2-0-10">
+<ul class="org-ul">
+<li>返回逆序的列表，不修改传进来的变量
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-0-11" class="outline-4">
+<h4 id="sec-2-0-11">sort 操作符</h4>
+<div class="outline-text-4" id="text-2-0-11">
+<ul class="org-ul">
+<li>返回排序后的列表，不修改传进来的变量
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-0-12" class="outline-4">
+<h4 id="sec-2-0-12">each 操作符</h4>
+<div class="outline-text-4" id="text-2-0-12">
+<ul class="org-ul">
+<li>返回数组下一个元素对应的索引和值
+</li>
+<li>($index, $value)=each @rocks
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-0-13" class="outline-4">
+<h4 id="sec-2-0-13">标量上下文和列表上下文</h4>
+<div class="outline-text-4" id="text-2-0-13">
+<ul class="org-ul">
+<li>chomp(@lines = &lt;STDIN&gt;)  读入所有行，换行符除外
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">子程序</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-0-1" class="outline-4">
+<h4 id="sec-3-0-1">定义</h4>
+<div class="outline-text-4" id="text-3-0-1">
+<ul class="org-ul">
+<li>sub marine {}
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-0-2" class="outline-4">
+<h4 id="sec-3-0-2">调用</h4>
+<div class="outline-text-4" id="text-3-0-2">
+<ul class="org-ul">
+<li>&amp;marine
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-0-3" class="outline-4">
+<h4 id="sec-3-0-3">默认数组变量</h4>
+<div class="outline-text-4" id="text-3-0-3">
+<ul class="org-ul">
+<li>@_  是程序的私有变量
+</li>
+<li>第一个变量 $_[ 0] 第二个变量 $_ [ 1]
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-0-4" class="outline-4">
+<h4 id="sec-3-0-4">my 操作符</h4>
+<div class="outline-text-4" id="text-3-0-4">
+<ul class="org-ul">
+<li>my($m, $n) 创建私有变量
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-3-0-5" class="outline-4">
+<h4 id="sec-3-0-5">一个例子</h4>
+<div class="outline-text-4" id="text-3-0-5">
+<div class="org-src-container">
+
+<pre class="src src-perl">$maximum = &amp;max(3, 5, 10, 4, 6)
+sub max {
+     my（$max_so_far) = shift @_;
+     foreach (@_){
+	  if ($_ &gt; $max_so_far){
+	       $max_so_far = $_;
+	  }
+	  $max_so_far;
+     }
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3-0-6" class="outline-4">
+<h4 id="sec-3-0-6">use strict 编译命令</h4>
+<div class="outline-text-4" id="text-3-0-6">
+<ul class="org-ul">
+<li>编译时采用更为严谨的方式，先用my 声明，再使用
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3-0-7" class="outline-4">
+<h4 id="sec-3-0-7">return 操作符</h4>
+<div class="outline-text-4" id="text-3-0-7">
+<ul class="org-ul">
+<li>从子程序中返回某个值
+</li>
+<li>持久性私有变量
+</li>
+<li>state $n = 0;
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">输入输出</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-sec-4-0-1" class="outline-4">
+<h4 id="sec-4-0-1">文件操作</h4>
+<div class="outline-text-4" id="text-4-0-1">
+<ul class="org-ul">
+<li>open CONFIG, 'dino';
+</li>
+<li>open CONFIG, '&lt;dino';
+</li>
+<li>open BEDROCK, '&gt;fred';
+</li>
+<li>open LOG， ‘&gt;&gt;logfile';
+</li>
+<li>open CONFIG, '&lt;:encoding(UTF-8)', 'dino'; 以UTF-8读取文件，也可以以此写入文件
+</li>
+<li>open BEDROCK, '&lt;:crlf', $file_name; 以dos风格读取文件（\r\n）
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-0-2" class="outline-4">
+<h4 id="sec-4-0-2">二进制</h4>
+<div class="outline-text-4" id="text-4-0-2">
+<ul class="org-ul">
+<li>binmode STDOUT
+</li>
+<li>binmode STDERR
+</li>
+<li>binmode STDOUT, ':encoding(UTF-8)';
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-0-3" class="outline-4">
+<h4 id="sec-4-0-3">关闭文件句柄</h4>
+<div class="outline-text-4" id="text-4-0-3">
+<ul class="org-ul">
+<li>close BEDROCK
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-0-4" class="outline-4">
+<h4 id="sec-4-0-4">处理致命错误</h4>
+<div class="outline-text-4" id="text-4-0-4">
+<div class="org-src-container">
+
+<pre class="src src-perl">if (!ipen LOG, '&gt;&gt;', 'logfile'）{
+     die " cannot create logfile: $!";
+}
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>$! 为默认错误信息，如 permission denied 等
+</li>
+<li>die 会终止程序并返回非零的退出码
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-0-5" class="outline-4">
+<h4 id="sec-4-0-5">自动检测致命错误</h4>
+<div class="outline-text-4" id="text-4-0-5">
+<ul class="org-ul">
+<li>use autodie;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-0-6" class="outline-4">
+<h4 id="sec-4-0-6">改变默认的文件输出句柄</h4>
+<div class="outline-text-4" id="text-4-0-6">
+<ul class="org-ul">
+<li>select BEDROCK;
+</li>
+<li>print "aaaaa"
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-0-7" class="outline-4">
+<h4 id="sec-4-0-7">输出内容会送到该文件句柄</h4>
+<div class="outline-text-4" id="text-4-0-7">
+<ul class="org-ul">
+<li>say 操作符
+</li>
+<li>类似println 输出自动换行
+</li>
+<li>标量变量中的文件句柄
+</li>
+<li>将文件句柄存在标量变量中
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">哈希</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-sec-5-0-1" class="outline-4">
+<h4 id="sec-5-0-1">访问哈希元素</h4>
+<div class="outline-text-4" id="text-5-0-1">
+<ul class="org-ul">
+<li>$hash{$some_ksy}
+</li>
+<li>$hash{'fred'}
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-0-2" class="outline-4">
+<h4 id="sec-5-0-2">访问整个哈希</h4>
+<div class="outline-text-4" id="text-5-0-2">
+<ul class="org-ul">
+<li>%family_name
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-0-3" class="outline-4">
+<h4 id="sec-5-0-3">胖箭头</h4>
+<div class="outline-text-4" id="text-5-0-3">
+<div class="org-src-container">
+
+<pre class="src src-perl">my %last_name = (
+'fred' =&gt; 'flintstone',
+'dino' =&gt; undef,
+'barney' =&gt; 'rubble',
+);
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5-0-4" class="outline-4">
+<h4 id="sec-5-0-4">keys 和values 函数</h4>
+<div class="outline-text-4" id="text-5-0-4">
+<ul class="org-ul">
+<li>kyes 返回哈希的键列表
+</li>
+<li>values 返回哈希的值列表
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-0-5" class="outline-4">
+<h4 id="sec-5-0-5">each 函数</h4>
+<div class="outline-text-4" id="text-5-0-5">
+<ul class="org-ul">
+<li>以列表形式返回键值对
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-0-6" class="outline-4">
+<h4 id="sec-5-0-6">exists 函数</h4>
+<div class="outline-text-4" id="text-5-0-6">
+<ul class="org-ul">
+<li>if (exists $books{'dino'}{} 检查哈希表中是否存在某个值
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-0-7" class="outline-4">
+<h4 id="sec-5-0-7">delete 函数</h4>
+<div class="outline-text-4" id="text-5-0-7">
+<ul class="org-ul">
+<li>delete $books{$person}; 删除哈希表指定键和对应的值
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">正则表达式</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-sec-6-0-1" class="outline-4">
+<h4 id="sec-6-0-1">匹配Unicode属性</h4>
+<div class="outline-text-4" id="text-6-0-1">
+<ul class="org-ul">
+<li>if (<i>\p{Space</i>){}
+</li>
+<li>if (<i>\p{Digit}</i>){}
+</li>
+<li>if (<i>\P{Space}</i>){} 大写的P，匹配模式以外的文本
+</li>
+<li>if (<i>(.)\1</i>){}  \1 表示对应顺序的捕获组，此匹配连续的2个同样的字符
+</li>
+<li>if (<i>(.)\g{1}11</i>){} 用方向引用\g{1} 消除歧义。使用负数表示相对引用。
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7">用正则表达式进行匹配</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+用m// 进行匹配，一般的匹配都是忽略了m。也可以用{} %%定界
+</p>
+</div>
+<div id="outline-container-sec-7-0-1" class="outline-4">
+<h4 id="sec-7-0-1">模式匹配修饰符</h4>
+<div class="outline-text-4" id="text-7-0-1">
+<ul class="org-ul">
+<li>if (/yes/i){} /i 大小写都匹配
+</li>
+<li>/s 匹配任意字符，包括换行符
+</li>
+<li>/x 允许加入空白符号，可以在模式中随意加入空白符，使他更易读理解
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7-0-2" class="outline-4">
+<h4 id="sec-7-0-2">锚点</h4>
+<div class="outline-text-4" id="text-7-0-2">
+<ul class="org-ul">
+<li>\A 匹配字符串绝对开头
+</li>
+<li>\z 匹配字符串绝对末尾 \z 允许后面出现换行符
+</li>
+<li>^ $ 行首和行尾
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7-0-3" class="outline-4">
+<h4 id="sec-7-0-3">匹配多行文本</h4>
+<div class="outline-text-4" id="text-7-0-3">
+<ul class="org-ul">
+<li>对perl 来说，这是一个大字符串，即使里面有好多换行符，但对人来说它是多行的。
+</li>
+<li>m 是将字符串作为多行处理，s是将字符串作为单行处理，如果是s在字符串中出现的\n就相当于普通字符。
+</li>
+<li>/fred$/m 找出行末的fred字符串，匹配fred和随后的换行符
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7-0-4" class="outline-4">
+<h4 id="sec-7-0-4">单词锚点</h4>
+<div class="outline-text-4" id="text-7-0-4">
+<ul class="org-ul">
+<li>\b 匹配单词边界
+</li>
+<li>\B 匹配非单词边界
+</li>
+<li><i>\bhunt\b</i> 会匹配hunt ,但不会匹配hunting，hunter
+</li>
+<li><i>\bhunt\B</i> 会匹配hunter,hunting，但不会匹配hunt
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7-0-5" class="outline-4">
+<h4 id="sec-7-0-5">=~绑定操作符</h4>
+<div class="outline-text-4" id="text-7-0-5">
+<ul class="org-ul">
+<li>if ($some_other =~ <i>\brub</i>){} 让右边的模式匹配来匹配左边的字符串，而不是默认匹配的$_
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7-0-6" class="outline-4">
+<h4 id="sec-7-0-6">捕获变量</h4>
+<div class="outline-text-4" id="text-7-0-6">
+<ul class="org-ul">
+<li>捕获到的变量保存在字符串，可以用$1,$2,这样的形式来表示它们
+</li>
+<li>捕获变量的存续期
+</li>
+<li>能存活到下次成功匹配为止。
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7-0-7" class="outline-4">
+<h4 id="sec-7-0-7">不捕获模式</h4>
+<div class="outline-text-4" id="text-7-0-7">
+<ul class="org-ul">
+<li>if (<i>(?:bronto)?saurus</i>){} 只分组不进行捕获
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7-0-8" class="outline-4">
+<h4 id="sec-7-0-8">命名捕获</h4>
+<div class="outline-text-4" id="text-7-0-8">
+<ul class="org-ul">
+<li>if ($name = ~ m/(?&lt;name1&gt;\w+)(?:and?or){} 可以用用$+（name1）引用
+</li>
+<li>自动捕获变量
+</li>
+<li>三个捕获变量
+</li>
+<li>通用量词
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7-0-9" class="outline-4">
+<h4 id="sec-7-0-9">花括号</h4>
+<div class="outline-text-4" id="text-7-0-9">
+<ul class="org-ul">
+<li>{n,m} 匹配n到m次
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8">用正则表达式处理文本</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>用s///进行替换
+</li>
+<li>用s///g 进行全局替换
+</li>
+<li>\s+ 匹配空白符
+</li>
+</ul>
+</div>
+<div id="outline-container-sec-8-0-1" class="outline-4">
+<h4 id="sec-8-0-1">无损替换</h4>
+<div class="outline-text-4" id="text-8-0-1">
+<ul class="org-ul">
+<li>加/r 修饰符。s///原来是操作完后返回成功替换的次数，加/r后会保留原字符串变量中的值不变，而把替换结果作为替换操作的返回值返回
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-8-0-2" class="outline-4">
+<h4 id="sec-8-0-2">大小写转换</h4>
+<div class="outline-text-4" id="text-8-0-2">
+<ul class="org-ul">
+<li>\U 会将其后的所有字符转换成大写
+</li>
+<li>\L 会将其后的所有字符转换成小写
+</li>
+<li>\u \l 只会影响其后的第一个字符
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-8-0-3" class="outline-4">
+<h4 id="sec-8-0-3">split 操作符</h4>
+<div class="outline-text-4" id="text-8-0-3">
+<ul class="org-ul">
+<li>my @fields = split <i>separator</i>, $string;
+</li>
+<li>例如 my @fields = split  <i>\s+</i>, $string; 以空白字符分隔字段
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-8-0-4" class="outline-4">
+<h4 id="sec-8-0-4">join 函数</h4>
+<div class="outline-text-4" id="text-8-0-4">
+<ul class="org-ul">
+<li>将片段合并为一个字符串
+</li>
+<li>my $x = join ";", 4, 6, 8, 10, 12; 
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-8-0-5" class="outline-4">
+<h4 id="sec-8-0-5">非贪婪模式</h4>
+<div class="outline-text-4" id="text-8-0-5">
+<ul class="org-ul">
+<li>后面加？
+</li>
+<li>一次更新多个文件
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9">其他控制结构</h2>
+<div class="outline-text-2" id="text-9">
+</div><div id="outline-container-sec-9-0-1" class="outline-4">
+<h4 id="sec-9-0-1">unless 控制结构</h4>
+<div class="outline-text-4" id="text-9-0-1">
+<ul class="org-ul">
+<li>除非执行条件为真，否则就执行里面的代码。相当于独立的else子句
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-9-0-2" class="outline-4">
+<h4 id="sec-9-0-2">until 控制结构</h4>
+<div class="outline-text-4" id="text-9-0-2">
+<ul class="org-ul">
+<li>在条件为假时重复执行，或者说重复执行直到条件为真
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-9-0-3" class="outline-4">
+<h4 id="sec-9-0-3">裸块</h4>
+<div class="outline-text-4" id="text-9-0-3">
+<ul class="org-ul">
+<li>没有关键字的代码块
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-9-0-4" class="outline-4">
+<h4 id="sec-9-0-4">elsif 子句</h4>
+</div>
+<div id="outline-container-sec-9-0-5" class="outline-4">
+<h4 id="sec-9-0-5">for 控制结构</h4>
+</div>
+<div id="outline-container-sec-9-0-6" class="outline-4">
+<h4 id="sec-9-0-6">for 其实和foreach 是等价的</h4>
+</div>
+<div id="outline-container-sec-9-0-7" class="outline-4">
+<h4 id="sec-9-0-7">last 操作符</h4>
+<div class="outline-text-4" id="text-9-0-7">
+<ul class="org-ul">
+<li>相等于break
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-9-0-8" class="outline-4">
+<h4 id="sec-9-0-8">next 操作符</h4>
+<div class="outline-text-4" id="text-9-0-8">
+<ul class="org-ul">
+<li>类似于continue
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-9-0-9" class="outline-4">
+<h4 id="sec-9-0-9">redo 操作符</h4>
+<div class="outline-text-4" id="text-9-0-9">
+<ul class="org-ul">
+<li>从新执行这次的迭代
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-9-0-10" class="outline-4">
+<h4 id="sec-9-0-10">带标签的块</h4>
+<div class="outline-text-4" id="text-9-0-10">
+<ul class="org-ul">
+<li>可以从内层对外层的循环块进行控制 用last next redo 进行跳转
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-perl">LINE: while (&lt;&gt;) {
+     foreach (split) {
+	  last LINE if /_END_/;
+}
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-9-0-11" class="outline-4">
+<h4 id="sec-9-0-11">条件操作符</h4>
+<div class="outline-text-4" id="text-9-0-11">
+<ul class="org-ul">
+<li>:?
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>用org-mode写博客</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="description" content="侯爷的Wiki|记录和分享"
+ />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 100%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="/css/worg.css" /> <link rel="shortcut icon" href="/images/favicon.ico"/>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-41177027-4', 'auto');
+ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="H" href="http://wiki.houye.xyz"> HOME </a>
+</div><div id="content">
+<h1 class="title">用org-mode写博客</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. 配置GNU Emacs 的编码</a></li>
+<li><a href="#sec-2">2. 修改GNU Emacs 的lisp包</a>
+<ul>
+<li><a href="#sec-2-1">2.1. linux</a></li>
+<li><a href="#sec-2-2">2.2. Windows</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. 去掉Validate XHTML 1.0</a></li>
+<li><a href="#sec-4">4. 介绍模板文件</a>
+<ul>
+<li><a href="#sec-4-1">4.1. Google Analytisc</a></li>
+<li><a href="#sec-4-2">4.2. Disqus</a></li>
+<li><a href="#sec-4-3">4.3. 网页</a>
+<ul>
+<li><a href="#sec-4-3-1">4.3.1. CSS 文件</a></li>
+<li><a href="#sec-4-3-2">4.3.2. favicon</a></li>
+<li><a href="#sec-4-3-3">4.3.3. DESCRIPTION</a></li>
+<li><a href="#sec-4-3-4">4.3.4. 网页标题</a></li>
+<li><a href="#sec-4-3-5">4.3.5. 主页</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-4">4.4. 文档元数据</a>
+<ul>
+<li><a href="#sec-4-4-1">4.4.1. 取消目录里各级标题前的数字</a></li>
+<li><a href="#sec-4-4-2">4.4.2. 取消生成工具</a></li>
+<li><a href="#sec-4-4-3">4.4.3. 取消作者</a></li>
+<li><a href="#sec-4-4-4">4.4.4. 取消时间</a></li>
+<li><a href="#sec-4-4-5">4.4.5. 取消目录</a></li>
+<li><a href="#sec-4-4-6">4.4.6. 取消TEX的转义</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-5">4.5. 内容元数据</a>
+<ul>
+<li><a href="#sec-4-5-1">4.5.1. 加源代码</a></li>
+<li><a href="#sec-4-5-2">4.5.2. 内容居中</a></li>
+<li><a href="#sec-4-5-3">4.5.3. 插入HTML</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> 配置GNU Emacs 的编码</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+在配置文件里写入以下内容
+</p>
+<div class="org-src-container">
+
+<pre class="src src-lisp">(setq current-language-environment "UTF-8")
+(setq locale-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> 修改GNU Emacs 的lisp包</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+去掉与HOME相连的UP
+</p>
+</div>
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> linux</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+我的系统是slackware 14.1，源码编译安装最新的emacs24.5前，修改lisp/org/ox-html.el，找到‘，删删除’UP‘，用M-x byte-compile-file编译成elc文件。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Windows</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+打开 <del>lisp/org/org-html.el</del> lisp/org/ox-html.el 修改org-export-html-home/up-format
+</p>
+<div class="org-src-container">
+
+<pre class="src src-lisp">(defcustom org-export-html-home/up-format
+  "&lt;div id=\"org-div-home-and-up\" style=\"text-align:right;font-size:100%%;white-space:nowrap;\"&gt;
+&lt;a accesskey=\"H\" href=\"%s\"&gt; HOME &lt;/a&gt;
+&lt;/div&gt;"
+  "Snippet used to insert the HOME and UP links.
+This is a format string, the first %s will receive the UP link,
+the second the HOME link.  If both `org-export-html-link-up' and
+`org-export-html-link-home' are empty, the entire snippet will be
+ignored."
+  :group 'org-export-html
+  :type 'string)
+</pre>
+</div>
+<p>
+因为GNU Emacs 默认会读elc文件，所以修改好后，用M-x byte-compile-file 编译一下。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> 去掉Validate XHTML 1.0</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+在配置文件里写入
+</p>
+<div class="org-src-container">
+
+<pre class="src src-lisp">(setq org-export-html-validation-link nil)
+</pre>
+</div>
+<p>
+在org-mode 8 中更改为org-html-validation-link
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> 介绍模板文件</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Google Analytisc</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Google Analytisc 代码用#+HTML_HEAD逐行写在内容前面。
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Disqus</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Disqus 代码用#+BEGIN_HTML #+END_HTML 写在内容后面。
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> 网页</h3>
+<div class="outline-text-3" id="text-4-3">
+</div><div id="outline-container-sec-4-3-1" class="outline-4">
+<h4 id="sec-4-3-1"><span class="section-number-4">4.3.1</span> CSS 文件</h4>
+<div class="outline-text-4" id="text-4-3-1">
+<p>
+CSS 代码参考这个
+</p>
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;link rel="stylesheet" type="text/css" href="/css/worg.css" /&gt;
+</pre>
+</div>
+<p>
+前面加#+HTML_HEAD 加在内容前面。
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-3-2" class="outline-4">
+<h4 id="sec-4-3-2"><span class="section-number-4">4.3.2</span> favicon</h4>
+<div class="outline-text-4" id="text-4-3-2">
+<p>
+参考
+</p>
+<div class="org-src-container">
+
+<pre class="src src-html">&lt;LINK REL="SHORTCUT ICON" HREF="/IMAGES/FAVICON.ICO"/&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4-3-3" class="outline-4">
+<h4 id="sec-4-3-3"><span class="section-number-4">4.3.3</span> DESCRIPTION</h4>
+<div class="outline-text-4" id="text-4-3-3">
+<p>
+用#+DESCRIPTION: 添加
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-3-4" class="outline-4">
+<h4 id="sec-4-3-4"><span class="section-number-4">4.3.4</span> 网页标题</h4>
+<div class="outline-text-4" id="text-4-3-4">
+<p>
+用#+TITLE: 添加
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-3-5" class="outline-4">
+<h4 id="sec-4-3-5"><span class="section-number-4">4.3.5</span> 主页</h4>
+<div class="outline-text-4" id="text-4-3-5">
+<p>
+用#+LINK_HOME: 添加
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4-4" class="outline-3">
+<h3 id="sec-4-4"><span class="section-number-3">4.4</span> 文档元数据</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+下面的内容都是ORG-MODE 默认开启，而我要关闭它们。这节的配置都写在#+OPTIONS: 后面
+</p>
+</div>
+<div id="outline-container-sec-4-4-1" class="outline-4">
+<h4 id="sec-4-4-1"><span class="section-number-4">4.4.1</span> 取消目录里各级标题前的数字</h4>
+<div class="outline-text-4" id="text-4-4-1">
+<p>
+NUM:NIL
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-4-2" class="outline-4">
+<h4 id="sec-4-4-2"><span class="section-number-4">4.4.2</span> 取消生成工具</h4>
+<div class="outline-text-4" id="text-4-4-2">
+<p>
+CREATOR:NIL
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-4-3" class="outline-4">
+<h4 id="sec-4-4-3"><span class="section-number-4">4.4.3</span> 取消作者</h4>
+<div class="outline-text-4" id="text-4-4-3">
+<p>
+AUTHOR:NIL
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-4-4" class="outline-4">
+<h4 id="sec-4-4-4"><span class="section-number-4">4.4.4</span> 取消时间</h4>
+<div class="outline-text-4" id="text-4-4-4">
+<p>
+TIMESTAMP:NIL
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-4-5" class="outline-4">
+<h4 id="sec-4-4-5"><span class="section-number-4">4.4.5</span> 取消目录</h4>
+<div class="outline-text-4" id="text-4-4-5">
+<p>
+TOC:NIL
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-4-6" class="outline-4">
+<h4 id="sec-4-4-6"><span class="section-number-4">4.4.6</span> 取消TEX的转义</h4>
+<div class="outline-text-4" id="text-4-4-6">
+<p>
+_ 会使得后面的内容变成下标，加上下面的选项可以避免。
+^:NIL
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4-5" class="outline-3">
+<h3 id="sec-4-5"><span class="section-number-3">4.5</span> 内容元数据</h3>
+<div class="outline-text-3" id="text-4-5">
+</div><div id="outline-container-sec-4-5-1" class="outline-4">
+<h4 id="sec-4-5-1"><span class="section-number-4">4.5.1</span> 加源代码</h4>
+<div class="outline-text-4" id="text-4-5-1">
+<p>
+用#+BEGIN_SRC C -N &#x2026; #+END_SRC，C可以换成别的语言，-N显示行号。
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-5-2" class="outline-4">
+<h4 id="sec-4-5-2"><span class="section-number-4">4.5.2</span> 内容居中</h4>
+<div class="outline-text-4" id="text-4-5-2">
+<p>
+用#+BEGIN_CENTER &#x2026; #+END_CENTER
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-5-3" class="outline-4">
+<h4 id="sec-4-5-3"><span class="section-number-4">4.5.3</span> 插入HTML</h4>
+<div class="outline-text-4" id="text-4-5-3">
+<p>
+用#+BEGIN_HTML &#x2026; #+END_HTML
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

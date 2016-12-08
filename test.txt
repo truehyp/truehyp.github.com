@@ -1,0 +1,1 @@
+ <a accesskey="H" href="http://wiki.houye.xyz"> HOME </a>

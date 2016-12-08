@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <meta name=viewport content="width=device-width, initial-scale=1">
+   <title>latex beamer ppt模板</title>
+   <meta name="author" content="侯爷" />
+   <meta name="description" content="侯爷的个人博客｜分享和记录"/>
+   <link href="http://truehyp.github.io/atom.xml" rel="alternate" title="侯爷" type="application/atom+xml" />
+   <link rel="shortcut icon" href="/images/favicon.ico"/>
+   <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/css/wiki.css" type="text/css" media="screen, projection" />
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41177027-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- Google Analytics end -->
+
+<!--baidu -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?4ebb0842c074b4cce7c48d0ab1cf96ba";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!--baidu -->
+</head>
+<body>
+
+
+<div class="site">
+  <div class="title">
+    <a href="/#">侯爷的wiki</a>
+  </div>
+  
+  
+
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\documentclass</span><span class="na">[CJKutf8]</span><span class="nb">{</span>beamer<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>CJKutf8<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>multimedia<span class="nb">}</span>
+<span class="c">%% 主题模板 </span>
+<span class="c">%% Madrid 青底 带页码 作者信息</span>
+<span class="c">%% AnnArbor 黄底，其他同Madrid </span>
+<span class="c">%% Warsaw  青底，带作者信息，章节目</span>
+<span class="c">%% Antibes 青底 带树形章节目 无作者信息等</span>
+<span class="c">%% Montpellier 素雅 带树形章节目 无作者信息等</span>
+<span class="k">\usetheme</span><span class="nb">{</span>Warsaw<span class="nb">}</span>
+<span class="c">%%颜色主题</span>
+<span class="c">%%\usecolortheme{rose}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>CJK<span class="nb">}{</span>UTF8<span class="nb">}{</span>gbsn<span class="nb">}</span>
+<span class="k">\title</span><span class="nb">{</span> A Simple Presentation<span class="nb">}</span>
+<span class="k">\subtitle</span><span class="nb">{</span>副标题<span class="nb">}</span>
+<span class="k">\author</span><span class="nb">{</span>A <span class="k">\LaTeX</span><span class="nb">{}</span>er<span class="nb">}</span>
+<span class="k">\date</span><span class="nb">{</span><span class="k">\today</span><span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>  <span class="c">%%标题页</span>
+<span class="k">\titlepage</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\section</span><span class="nb">{</span>概述<span class="nb">}</span> <span class="c">%%定义章节目录</span>
+<span class="k">\subsection</span><span class="nb">{</span>基本理论<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}{</span>Hello, World!<span class="nb">}</span> <span class="c">%%帧标题</span>
+This is a hello world example of writing present
+<span class="c">%%插图和局部放大功能</span>
+<span class="c">%%framezoom&lt;初始层&gt;&lt;放大层&gt;[参数]（以左上角开始的坐标）（选取框的高和</span>
+<span class="c">%%宽）</span>
+<span class="k">\framezoom</span>&lt;1&gt;&lt;2&gt;[border](50mm,50mm)(5mm,5mm)
+<span class="k">\includegraphics</span><span class="na">[width=\textwidth]</span><span class="nb">{</span>untitled.jpg<span class="nb">}</span>  <span class="c">%%beamer已经自动</span>
+                                <span class="c">%%加载宏包graphicx</span>
+
+  
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\subsection</span><span class="nb">{</span>论据和论点<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\frametitle</span><span class="nb">{</span>Examples<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>block<span class="nb">}{</span>块实例<span class="nb">}</span>
+这是一个例子,zoe
+<span class="k">\end</span><span class="nb">{</span>block<span class="nb">}</span>
+Itemize example:
+<span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="k">\item</span> Hello world! is simple;
+  <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+  <span class="k">\item</span> <span class="k">\LaTeX</span><span class="nb">{}</span> beamer is powerful,Andalusia&#39;s
+  <span class="k">\item</span> beautiful
+  <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>example<span class="nb">}</span>
+    Itemize example:
+    <span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+    <span class="k">\item</span> hello world is simple;
+    <span class="k">\item</span> <span class="k">\LaTeX</span><span class="nb">{}</span> beamer is easy.
+    <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+   <span class="k">\end</span><span class="nb">{</span>example<span class="nb">}</span>
+   <span class="k">\begin</span><span class="nb">{</span>exampleblock<span class="nb">}{</span>Enumerate example:<span class="nb">}</span>
+     <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+     <span class="k">\item</span> <span class="k">\LaTeX</span><span class="nb">{}</span> beamer is powerful,and
+     <span class="k">\item</span> beautiful.
+     <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+   <span class="k">\end</span><span class="nb">{</span>exampleblock<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span><span class="k">\frametitle</span><span class="nb">{</span>Examples<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>columns<span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>column<span class="nb">}{</span>.5<span class="k">\textwidth</span><span class="nb">}</span>
+    <span class="k">\begin</span><span class="nb">{</span>example<span class="nb">}</span>
+      Itemize example:
+      <span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+      <span class="k">\item</span> Hello,world is simple;
+      <span class="k">\itme</span> <span class="k">\LaTeX</span><span class="nb">{}</span> beamer is easy.
+      <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+    <span class="k">\end</span><span class="nb">{</span>example<span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>column<span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>column<span class="nb">}{</span>.5<span class="k">\textwidth</span><span class="nb">}</span>
+    <span class="k">\begin</span><span class="nb">{</span>exampleblock<span class="nb">}{</span>Enumerate example:<span class="nb">}</span>
+      <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+      <span class="k">\item</span> <span class="k">\LaTeX</span><span class="nb">{}</span> beamer is powerful, and
+      <span class="k">\item</span> beautiful.
+      <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+      
+    <span class="k">\end</span><span class="nb">{</span>exampleblock<span class="nb">}</span>
+    
+  <span class="k">\end</span><span class="nb">{</span>column<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>columns<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span><span class="k">\frametitle</span><span class="nb">{</span>Examples<span class="nb">}</span>
+  Itemize expamle; <span class="k">\pause</span>
+  <span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+  <span class="k">\item</span> Hello world! is simple; <span class="k">\pause</span>
+  <span class="k">\item</span> <span class="k">\LaTeX</span><span class="nb">{}</span> beamer is easy. <span class="k">\pause</span>
+  <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+  Enumerate exapmle; <span class="k">\pause</span>
+  <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+  <span class="k">\item</span> <span class="k">\LaTeX</span><span class="nb">{}</span> beamer is powerful ,and <span class="k">\pause</span>
+  <span class="k">\item</span> beautiful. <span class="k">\pause</span>
+  <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[fragile]<span class="k">\frametitle</span><span class="nb">{</span>抄录环境<span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>semiverbatim<span class="nb">}</span>
+    我和你  <span class="k">\pause</span>
+    我和你，在一起，心连心，同住地球村<span class="k">\LaTeX</span><span class="nb">{}</span> <span class="k">\uncover</span>
+    这个你能看到么   <span class="k">\only</span>
+    
+
+  <span class="k">\end</span><span class="nb">{</span>semiverbatim<span class="nb">}</span>
+  
+<span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>CJK<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span></code></pre></div>
+
+
+  
+
+  <div class="footer">
+    <div class="contact">
+      <p>
+        <a href="http://github.com/truehyp/">Github</a>
+      </p>
+    </div>
+    <div class="contact">
+		<p> <a href="http://www.douban.com/people/truehyp/">豆瓣</a>
+	</div>
+    <div class="contact">
+		<p> <a href="mailto:truehyp@outlook.com">邮箱</a>
+	</div>
+    <div class="contact">
+		<p> <a href="/atom.xml">订阅</a> <p>
+    </div>
+    <div class="contact">
+		<p>文章采用<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/">BY-NC-SA</a>授权<p>
+	</div>
+    <div class="rss">
+      <p>
+        Powered by
+		<a href="http://github.com/">GitHub</a> and <a href="http://jekyllrb.com/">Jekyll</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
