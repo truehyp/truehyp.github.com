@@ -12,4 +12,6 @@
 #+TITLE: imagemagick 压缩图片
 #+HTML_LINK_HOME: aaa
 
+#+begin_src
 convert -resize "800x800^" src.jpg des.jpg
+#+end_src
