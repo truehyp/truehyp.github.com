@@ -1,0 +1,47 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/worg.css" /> <link rel="shortcut icon" href="/images/favicon.ico"/>
+#+HTML_HEAD: <script>
+#+HTML_HEAD:  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+#+HTML_HEAD:  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+#+HTML_HEAD:  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+#+HTML_HEAD:  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+#+HTML_HEAD:  ga('create', 'UA-41177027-4', 'auto');
+#+HTML_HEAD:  ga('send', 'pageview');
+#+HTML_HEAD: </script>
+#+DESCRIPTION: 侯爷的Wiki|记录和分享
+#+OPTIONS: num:nil creator:nil author:nil timestamp:nil toc:nil
+#+TITLE: limits调优失效的解决
+#+HTML_LINK_HOME: aaa
+
+在/etc/security/limits.conf中加入
+
+#+begin_src shell -n
+* soft nofile 65536
+* hard nofile 65536
+#+end_src
+
+重启系统后用ulimit -n 查看最大文件打开数依然是1024，su到别的用户后发现最大文件打开数已经是调优过的65536
+
+一番搜索后，发现是ssh_config中的一个配置问题。打开/etc/ssh/sshd_config ，修改UsePam 为yes。不用重启，重新登录下就行。
+
+#+BEGIN_HTML
+</br>
+</br>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'hypblog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+#+END_HTML
+
+
+
+
